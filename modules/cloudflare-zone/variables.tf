@@ -1,9 +1,9 @@
 # ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED VARIABLES
+# MODULE PARAMETERS
 # ---------------------------------------------------------------------------------------------------------------------
 
 variable "account_id" {
-  description = "The Cloudflare account ID in which this resource will be managed."
+  description = "The Cloudflare account ID in which this zone will be managed."
   type        = string
 }
 
@@ -11,10 +11,6 @@ variable "zone" {
   description = "The DNS zone name which will be added."
   type        = string
 }
-
-# ---------------------------------------------------------------------------------------------------------------------
-# OPTIONAL VARIABLES
-# ---------------------------------------------------------------------------------------------------------------------
 
 variable "paused" {
   description = "Whether or not this zone is paused (traffic bypasses Cloudflare)."
@@ -325,10 +321,4 @@ variable "zero_rtt" {
   description = "Whether or not 0-RTT is enabled. One of `on` or `off`."
   type        = string
   default     = "off"
-}
-
-variable "mail_domain" {
-  description = "Whether or not email will be sent from this domain. Setting this to false will provision SPF, DMARC, and DKIM records prevent mail passing through mail servers that respect these records."
-  type        = bool
-  default     = false
 }
